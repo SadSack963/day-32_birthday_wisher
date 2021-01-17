@@ -3,12 +3,15 @@ import random
 from os import listdir
 import datetime as dt
 import smtplib
+import os
+from dotenv import load_dotenv
 
 
-YAHOO_SENDER = "Python"
-YAHOO_USERNAME = "j_patmore"
-YAHOO_EMAIL = "j_patmore@yahoo.co.uk"
-YAHOO_PASSWORD = "xyz"
+load_dotenv("E:/Python/EnvironmentVariables/.env")
+YAHOO_SENDER = os.getenv("SMTP_YAHOO_SENDER")
+YAHOO_USERNAME = os.getenv("SMTP_YAHOO_USERNAME")
+YAHOO_EMAIL = os.getenv("SMTP_YAHOO_EMAIL")
+YAHOO_PASSWORD = os.getenv("SMTP_YAHOO_PASSWORD")
 
 
 def send_mail(to_addr):
